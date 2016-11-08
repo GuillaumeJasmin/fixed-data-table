@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+# set -e
 PATH=$(npm bin):$PATH
 
 rm -rf ./dist

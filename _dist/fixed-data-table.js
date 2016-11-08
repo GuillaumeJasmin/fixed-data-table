@@ -176,9 +176,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	var FixedDataTable = __webpack_require__(26);
-	var FixedDataTableCellDefault = __webpack_require__(76);
-	var FixedDataTableColumn = __webpack_require__(77);
-	var FixedDataTableColumnGroup = __webpack_require__(78);
+	var FixedDataTableCellDefault = __webpack_require__(65);
+	var FixedDataTableColumn = __webpack_require__(63);
+	var FixedDataTableColumnGroup = __webpack_require__(62);
 
 	var FixedDataTableRoot = {
 	  Cell: FixedDataTableCellDefault,
@@ -4458,8 +4458,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	var React = __webpack_require__(27);
 	var FixedDataTableCellGroup = __webpack_require__(59);
 
@@ -4683,9 +4681,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      'div',
 	      {
 	        style: style,
-	        className: cx(_defineProperty({
-	          'fixedDataTableRowLayout/rowWrapper': true
-	        }, 'row-index-' + this.props.index, true)) },
+	        className: cx('fixedDataTableRowLayout/rowWrapper') },
 	      React.createElement(FixedDataTableRowImpl, _extends({}, this.props, {
 	        offsetTop: undefined,
 	        zIndex: undefined
@@ -6935,213 +6931,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	module.exports = TransitionCell;
-
-/***/ },
-/* 76 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright (c) 2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule FixedDataTableCellDefault.react
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-	var React = __webpack_require__(27);
-
-	var cx = __webpack_require__(47);
-	var joinClasses = __webpack_require__(66);
-
-	var PropTypes = React.PropTypes;
-
-	/**
-	 * Component that handles default cell layout and styling.
-	 *
-	 * All props unless specified below will be set onto the top level `div`
-	 * rendered by the cell.
-	 *
-	 * Example usage via from a `Column`:
-	 * ```
-	 * const MyColumn = (
-	 *   <Column
-	 *     cell={({rowIndex, width, height}) => (
-	 *       <Cell
-	 *         width={width}
-	 *         height={height}
-	 *         className="my-class">
-	 *         Cell number: <span>{rowIndex}</span>
-	*        </Cell>
-	 *     )}
-	 *     width={100}
-	 *   />
-	 * );
-	 * ```
-	 */
-	var FixedDataTableCellDefault = React.createClass({
-	  displayName: 'FixedDataTableCellDefault',
-
-	  propTypes: {
-
-	    /**
-	     * Outer height of the cell.
-	     */
-	    height: PropTypes.number,
-
-	    /**
-	     * Outer width of the cell.
-	     */
-	    width: PropTypes.number,
-
-	    /**
-	     * Optional prop that if specified on the `Column` will be passed to the
-	     * cell. It can be used to uniquely identify which column is the cell is in.
-	     */
-	    columnKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-	  },
-
-	  render: function render() {
-	    var _props = this.props;
-	    var height = _props.height;
-	    var width = _props.width;
-	    var style = _props.style;
-	    var className = _props.className;
-	    var children = _props.children;
-	    var columnKey = _props.columnKey;
-	    var // Unused but should not be passed through
-	    rowIndex = _props.rowIndex;
-
-	    var props = _objectWithoutProperties(_props, ['height', 'width', 'style', 'className', 'children', 'columnKey', 'rowIndex']);
-
-	    var innerStyle = _extends({
-	      height: height,
-	      width: width
-	    }, style);
-
-	    return React.createElement(
-	      'div',
-	      _extends({}, props, {
-	        className: joinClasses(cx('fixedDataTableCellLayout/wrap1'), cx('public/fixedDataTableCell/wrap1'), className),
-	        style: innerStyle }),
-	      React.createElement(
-	        'div',
-	        {
-	          className: joinClasses(cx('fixedDataTableCellLayout/wrap2'), cx('public/fixedDataTableCell/wrap2')) },
-	        React.createElement(
-	          'div',
-	          {
-	            className: joinClasses(cx('fixedDataTableCellLayout/wrap3'), cx('public/fixedDataTableCell/wrap3')) },
-	          React.createElement(
-	            'div',
-	            { className: cx('public/fixedDataTableCell/cellContent') },
-	            children
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	module.exports = FixedDataTableCellDefault;
-	// Unused but should not be passed through
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright (c) 2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule FixedDataTableColumn.react
-	 */
-
-	/**
-	 * TRANSITION SHIM
-	 * This acts to provide an intermediate mapping from the old API to the new API.
-	 *
-	 * When ready, remove this file and rename the providesModule in
-	 * FixedDataTableColumnNew.react
-	 */
-
-	'use strict';
-
-	var React = __webpack_require__(27);
-
-	var TransitionColumn = React.createClass({
-	  displayName: 'TransitionColumn',
-
-	  statics: {
-	    __TableColumn__: true
-	  },
-
-	  render: function render() {
-	    if (true) {
-	      throw new Error('Component <TransitionColumn /> should never render');
-	    }
-	    return null;
-	  }
-	});
-
-	module.exports = TransitionColumn;
-
-/***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright (c) 2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule FixedDataTableColumnGroup.react
-	 */
-
-	/**
-	 * TRANSITION SHIM
-	 * This provides an intermediate mapping from the old API to the new API.
-	 *
-	 * When ready, remove this file and rename the providesModule in
-	 * FixedDataTableColumnNew.react
-	 */
-
-	'use strict';
-
-	var React = __webpack_require__(27);
-
-	var TransitionColumnGroup = React.createClass({
-	  displayName: 'TransitionColumnGroup',
-
-	  statics: {
-	    __TableColumnGroup__: true
-	  },
-
-	  render: function render() {
-	    if (true) {
-	      throw new Error('Component <TransitionColumnGroup /> should never render');
-	    }
-	    return null;
-	  }
-	});
-
-	module.exports = TransitionColumnGroup;
 
 /***/ }
 /******/ ])
